@@ -11,6 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20170629131351) do
+
+  create_table "todos", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.text     "notes",      limit: 65535
+    t.boolean  "focus"
+    t.integer  "time",       limit: 4
+    t.integer  "energy",     limit: 4
+    t.date     "due"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
 end
