@@ -46,3 +46,4 @@ group :development do
 end
 
 gem 'thor', '0.19.1'
+gem 'awesome_rails_console'
