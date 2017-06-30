@@ -47,5 +47,10 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  # Collection of testing matchers extracted from Shoulda
+  gem 'shoulda-matchers', '~> 3.1'
+end
+
 gem 'thor', '0.19.1'
 gem 'awesome_rails_console'
