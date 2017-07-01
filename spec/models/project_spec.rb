@@ -8,6 +8,8 @@ RSpec.describe Project, type: :model do
   ) }
   it { should be_valid }
 
+  it { should have_many(:todos) }
+
   describe '#title' do
     it { should validate_presence_of(:title) }
   end

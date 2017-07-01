@@ -4,6 +4,8 @@ RSpec.describe Todo, type: :model do
   subject { described_class.new(title: "Anything", state: (0..5).to_a.sample) }
   it { should be_valid }
 
+  it { should belong_to(:project) }
+
   describe '#title' do
     it { should validate_presence_of(:title) }
   end
