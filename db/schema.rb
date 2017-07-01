@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170701100132) do
+ActiveRecord::Schema.define(version: 20170701102225) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "title",             limit: 255
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20170701100132) do
     t.integer  "time",       limit: 4
     t.integer  "energy",     limit: 4
     t.date     "due"
+    t.integer  "project_id", limit: 4
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
