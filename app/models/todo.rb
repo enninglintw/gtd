@@ -1,6 +1,7 @@
 class Todo < ActiveRecord::Base
-  validates_presence_of :title
+  validates_presence_of :title, :state
 
+  enum state: [:inbox, :next, :later, :waiting, :scheduled, :someday]
   enum energy: [:low, :medium, :high]
   enum time: {
     in_5_mins:  5,
