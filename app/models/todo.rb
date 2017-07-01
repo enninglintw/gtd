@@ -1,4 +1,6 @@
 class Todo < ActiveRecord::Base
+  belongs_to :project
+
   validates_presence_of :title, :state
 
   enum state: [:inbox, :next, :later, :waiting, :scheduled, :someday]
