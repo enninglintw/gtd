@@ -1,11 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe Todo, type: :model do
-  subject { described_class.new(title: "Anything") }
+  subject { described_class.new(title: "Anything", state: (0..5).to_a.sample) }
   it { should be_valid }
 
   describe '#title' do
     it { should validate_presence_of(:title) }
+  end
+
+  describe '#state' do
+    it { should validate_presence_of(:state) }
+    it { should define_enum_for(:state).with([
+      :inbox, :next, :later, :waiting, :scheduled, :someday
+    ]) }
   end
 
   describe '#energy' do
