@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170701111110) do
+ActiveRecord::Schema.define(version: 20170701121210) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "title",             limit: 255
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 20170701111110) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "todo_tags", force: :cascade do |t|
+    t.integer  "todo_id",    limit: 4
+    t.integer  "tag_id",     limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "todo_tags", ["tag_id"], name: "index_todo_tags_on_tag_id", using: :btree
+  add_index "todo_tags", ["todo_id"], name: "index_todo_tags_on_todo_id", using: :btree
 
   create_table "todos", force: :cascade do |t|
     t.string   "title",      limit: 255
