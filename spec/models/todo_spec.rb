@@ -5,6 +5,8 @@ RSpec.describe Todo, type: :model do
   it { should be_valid }
 
   it { should belong_to(:project) }
+  it { should have_many(:todo_tags) }
+  it { should have_many(:tags).through(:todo_tags) }
 
   describe '#title' do
     it { should validate_presence_of(:title) }

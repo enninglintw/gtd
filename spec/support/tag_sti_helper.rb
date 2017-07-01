@@ -6,6 +6,9 @@ shared_examples "an STI class of tag" do
   ) }
   it { should be_valid }
 
+  it { should have_many(:todo_tags) }
+  it { should have_many(:todos).through(:todo_tags) }
+
   describe '#title' do
     it { should validate_presence_of(:title) }
   end
