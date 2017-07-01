@@ -9,6 +9,8 @@ RSpec.describe Project, type: :model do
   it { should be_valid }
 
   it { should have_many(:todos) }
+  it { should have_many(:project_tags) }
+  it { should have_many(:tags).through(:project_tags) }
 
   describe '#title' do
     it { should validate_presence_of(:title) }
