@@ -50,6 +50,8 @@ end
 group :test do
   # Collection of testing matchers extracted from Shoulda
   gem 'shoulda-matchers', '~> 3.1'
+  # Code coverage for Ruby
+  gem 'simplecov', :require => false
 end
 
 gem 'thor', '0.19.1'
