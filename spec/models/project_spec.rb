@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Project, type: :model do
   subject { described_class.new(
-    title: "Anything",
+    title: Faker::Lorem.sentence,
     state: (0..3).to_a.sample,
     actions_behaviour: (0..1).to_a.sample,
   ) }

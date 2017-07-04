@@ -5,6 +5,7 @@ class Tag < ActiveRecord::Base
   has_many :projects, through: :project_tags
 
   validates_presence_of :title, :type
+  validates_uniqueness_of :title
 
   enum color: [:red, :orange, :yellow, :green, :blue, :purple]
 end
