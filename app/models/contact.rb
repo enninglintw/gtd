@@ -1,0 +1,2 @@
+class Contact < Tag
+end
