@@ -1,7 +1,15 @@
+def type
+  if described_class.name == "Tag"
+    %w(Area Contact Label).sample
+  else
+    described_class.name
+  end
+end
+
 shared_examples "an STI class of tag" do
   subject { described_class.new(
     title: Faker::Lorem.unique.sentence,
-    type: described_class.name,
+    type: type,
     color: (0..5).to_a.sample,
   ) }
   it { should be_valid }
