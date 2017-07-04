@@ -15,3 +15,6 @@
 # config
 /config/database.yml
 /config/secrets.yml
+
+# simplecov
+/coverage
