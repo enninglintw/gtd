@@ -26,7 +26,7 @@ shared_examples "an STI class of tag" do
 
   describe '#type' do
     it { should validate_presence_of(:type) }
-    it { should be_a_kind_of described_class}
+    it { should be_a_kind_of described_class }
   end
 
   describe '#color' do
