@@ -1,6 +1,6 @@
 shared_examples "an STI class of tag" do
   subject { described_class.new(
-    title: Faker::Lorem.sentence,
+    title: Faker::Lorem.unique.sentence,
     type: described_class.name,
     color: (0..5).to_a.sample,
   ) }
@@ -13,6 +13,7 @@ shared_examples "an STI class of tag" do
 
   describe '#title' do
     it { should validate_presence_of(:title) }
+    it { should validate_uniqueness_of(:title) }
   end
 
   describe '#type' do
