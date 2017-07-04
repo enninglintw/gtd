@@ -1,6 +1,6 @@
 shared_examples "an STI class of tag" do
   subject { described_class.new(
-    title: "Anything",
+    title: Faker::Lorem.sentence,
     type: described_class.name,
     color: (0..5).to_a.sample,
   ) }

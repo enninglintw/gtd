@@ -1,7 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Todo, type: :model do
-  subject { described_class.new(title: "Anything", state: (0..5).to_a.sample) }
+  subject { described_class.new(
+    title: Faker::Lorem.sentence,
+    state: (0..5).to_a.sample
+  ) }
   it { should be_valid }
 
   it { should belong_to(:project) }
