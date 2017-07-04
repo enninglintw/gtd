@@ -37,6 +37,8 @@ group :development, :test do
   gem 'byebug'
   # Use RSpec
   gem 'rspec-rails', '~> 3.5'
+  # Generating fake data
+  gem "faker"
 end
 
 group :development do
