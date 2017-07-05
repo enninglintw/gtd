@@ -2,7 +2,9 @@ var NewTodo = React.createClass({
   render() {
     return (
       <div>
-        <h3>This is NewTodo!</h3>
+        <input placeholder='New todo' />
+        <input placeholder='Enter notes' />
+        <button>Submit</button>
       </div>
     )
   }
