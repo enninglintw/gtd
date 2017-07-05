@@ -3,6 +3,13 @@ var AllTodos = React.createClass({
     return { todos: [] }
   },
 
+  componentDidMount() {
+    $.getJSON(
+      '/api/v1/todos.json',
+      (response) => { this.setState({ todos: response }) }
+    );
+  },
+
   render() {
     return (
       <div>
