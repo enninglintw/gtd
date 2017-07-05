@@ -8,8 +8,8 @@ var NewTodo = React.createClass({
       url: '/api/v1/todos',
       type: 'POST',
       data: { todo: { title: title, state: state, notes: notes } },
-      success: (response) => {
-        console.log('Todo was successfully created.', response);
+      success: (todo) => {
+        this.props.handleCreate(todo);
       }
     });
   },

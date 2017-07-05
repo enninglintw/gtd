@@ -10,10 +10,14 @@ var Body = React.createClass({
     );
   },
 
+  handleCreate(todo) {
+    console.log(todo);
+  },
+
   render() {
     return (
       <div>
-        <NewTodo />
+        <NewTodo handleCreate={this.handleCreate} />
         <AllTodos todos={this.state.todos} />
       </div>
     )
