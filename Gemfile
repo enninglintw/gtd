@@ -58,3 +58,5 @@ end
 
 gem 'thor', '0.19.1'
 gem 'awesome_rails_console'
+# A set of responders modules to dry up your Rails 4.2+ app.
+gem "responders"
