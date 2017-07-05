@@ -11,9 +11,18 @@ var AllTodos = React.createClass({
   },
 
   render() {
+    var todos = this.state.todos.map((todo) => {
+      return (
+        <div key={todo.id}>
+          <h3>{todo.title}</h3>
+          <p>{todo.notes}</p>
+        </div>
+      )
+    });
+
     return (
       <div>
-        <h3>This is AllTodos!</h3>
+        {todos}
       </div>
     )
   }
