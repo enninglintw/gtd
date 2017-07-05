@@ -1,10 +1,17 @@
 var NewTodo = React.createClass({
   handleCreate() {
     var title = this.refs.title.value;
+    var state = 'inbox';
     var notes = this.refs.notes.value;
 
-    console.log('The title value is ' + title);
-    console.log('The notes value is ' + notes);
+    $.ajax({
+      url: '/api/v1/todos',
+      type: 'POST',
+      data: { todo: { title: title, state: state, notes: notes } },
+      success: (response) => {
+        console.log('Todo was successfully created.', response);
+      }
+    });
   },
 
   render() {
