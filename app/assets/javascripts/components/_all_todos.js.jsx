@@ -1,4 +1,8 @@
 var AllTodos = React.createClass({
+  getInitialState() {
+    return { todos: [] }
+  },
+
   render() {
     return (
       <div>
