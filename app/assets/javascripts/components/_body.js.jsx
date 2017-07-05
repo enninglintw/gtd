@@ -11,7 +11,8 @@ var Body = React.createClass({
   },
 
   handleCreate(todo) {
-    console.log(todo);
+    var updatedTodos = this.state.todos.concat(todo);
+    this.setState({ todos: updatedTodos })
   },
 
   render() {
