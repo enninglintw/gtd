@@ -5,6 +5,7 @@ var AllTodos = React.createClass({
         <div key={todo.id}>
           <h3>{todo.title}</h3>
           <p>{todo.notes}</p>
+          <button>Delete</button>
         </div>
       )
     });
