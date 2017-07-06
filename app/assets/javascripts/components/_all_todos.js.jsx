@@ -1,6 +1,12 @@
 var AllTodos = React.createClass({
   handleDelete(id) {
-    console.log(`Delete button of Todo ${id} is clicked.`);
+    $.ajax({
+      url: `/api/v1/todos/${id}`,
+      type: 'DELETE',
+      success(response) {
+        console.log(`Todo ${id} is successfully deleted by api request`);
+      }
+    });
   },
 
   render() {
