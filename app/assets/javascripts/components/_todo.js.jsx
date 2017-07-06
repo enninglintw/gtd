@@ -15,7 +15,7 @@ var Todo = React.createClass({
         type: 'PUT',
         data: { todo: todo },
         success: (todo) => {
-          console.log(todo);
+          this.props.handleEdit(todo);
         }
       });
     }
