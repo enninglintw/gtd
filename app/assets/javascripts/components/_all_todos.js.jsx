@@ -17,10 +17,9 @@ var AllTodos = React.createClass({
     var todos = this.props.todos.map((todo) => {
       return (
         <div key={todo.id}>
-          <h3>{todo.title}</h3>
-          <p>{todo.notes}</p>
-          <button onClick={this.handleEdit}>Edit</button>
-          <button onClick={this.handleDelete.bind(this, todo.id)}>Delete</button>
+          <Todo todo={todo}
+                handleEdit={this.handleEdit}
+                handleDelete={this.handleDelete.bind(this, todo.id)} />
         </div>
       )
     });
