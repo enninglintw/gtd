@@ -16,7 +16,8 @@ var Body = React.createClass({
   },
 
   handleDelete(id) {
-    console.log(`Todo ${id} is successfully deleted by api request`);
+    var updatedTodos = this.state.todos.filter((t) => { return t.id != id });
+    this.setState({ todos: updatedTodos })
   },
 
   render() {
