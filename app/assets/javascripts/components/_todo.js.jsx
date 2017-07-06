@@ -1,6 +1,10 @@
 var Todo = React.createClass({
+  getInitialState() {
+    return { editable: false }
+  },
+
   handleEdit() {
-    console.log(`Edit button of Todo ${this.props.todo.id} is clicked.`);
+    this.setState({ editable: !this.state.editable });
   },
 
   render() {
