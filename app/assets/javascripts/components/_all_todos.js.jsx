@@ -10,7 +10,7 @@ var AllTodos = React.createClass({
   },
 
   handleEdit(todo) {
-    console.log(todo);
+    this.props.handleEdit(todo);
   },
 
   render() {

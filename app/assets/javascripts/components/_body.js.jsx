@@ -20,11 +20,17 @@ var Body = React.createClass({
     this.setState({ todos: updatedTodos })
   },
 
+  handleEdit(todo) {
+    console.log(todo);
+  },
+
   render() {
     return (
       <div>
         <NewTodo handleCreate={this.handleCreate} />
-        <AllTodos todos={this.state.todos} handleDelete={this.handleDelete} />
+        <AllTodos todos={this.state.todos}
+                  handleEdit={this.handleEdit}
+                  handleDelete={this.handleDelete} />
       </div>
     )
   }
