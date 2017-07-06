@@ -1,6 +1,6 @@
 var AllTodos = React.createClass({
-  handleDelete() {
-    console.log('Delete button is clicked.');
+  handleDelete(id) {
+    console.log(`Delete button of Todo ${id} is clicked.`);
   },
 
   render() {
@@ -9,7 +9,7 @@ var AllTodos = React.createClass({
         <div key={todo.id}>
           <h3>{todo.title}</h3>
           <p>{todo.notes}</p>
-          <button onClick={this.handleDelete}>Delete</button>
+          <button onClick={this.handleDelete.bind(this, todo.id)}>Delete</button>
         </div>
       )
     });
