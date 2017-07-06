@@ -15,11 +15,15 @@ var Body = React.createClass({
     this.setState({ todos: updatedTodos })
   },
 
+  handleDelete(id) {
+    console.log(`Todo ${id} is successfully deleted by api request`);
+  },
+
   render() {
     return (
       <div>
         <NewTodo handleCreate={this.handleCreate} />
-        <AllTodos todos={this.state.todos} />
+        <AllTodos todos={this.state.todos} handleDelete={this.handleDelete} />
       </div>
     )
   }

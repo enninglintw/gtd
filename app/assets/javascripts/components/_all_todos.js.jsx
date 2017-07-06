@@ -3,8 +3,8 @@ var AllTodos = React.createClass({
     $.ajax({
       url: `/api/v1/todos/${id}`,
       type: 'DELETE',
-      success(response) {
-        console.log(`Todo ${id} is successfully deleted by api request`);
+      success:() => {
+        this.props.handleDelete(id);
       }
     });
   },
