@@ -5,13 +5,21 @@ var Todo = React.createClass({
 
   handleEdit() {
     if(this.state.editable) {
+      var id = this.props.todo.id;
       var title = this.refs.title.value;
       var notes = this.refs.notes.value;
-      console.log('In edit mode');
-      console.log(this.state.editable);
-      console.log(title);
-      console.log(notes);
+      var todo = { id: id, title: title, notes: notes };
+
+      $.ajax({
+        url: `/api/v1/todos/${id}`,
+        type: 'PUT',
+        data: { todo: todo },
+        success: (todo) => {
+          console.log(todo);
+        }
+      });
     }
+
     this.setState({ editable: !this.state.editable });
   },
 
