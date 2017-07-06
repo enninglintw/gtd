@@ -9,16 +9,11 @@ var AllTodos = React.createClass({
     });
   },
 
-  handleEdit() {
-    console.log('Edit button is clicked.');
-  },
-
   render() {
     var todos = this.props.todos.map((todo) => {
       return (
         <div key={todo.id}>
           <Todo todo={todo}
-                handleEdit={this.handleEdit}
                 handleDelete={this.handleDelete.bind(this, todo.id)} />
         </div>
       )
