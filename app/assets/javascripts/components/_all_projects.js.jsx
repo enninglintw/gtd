@@ -1,6 +1,6 @@
 var AllProjects = React.createClass({
-  handleDelete() {
-    console.log('Delete button is clicked');
+  handleDelete(id) {
+    console.log(`Delete button of Project ${id} is clicked`);
   },
 
   render() {
@@ -13,7 +13,7 @@ var AllProjects = React.createClass({
           <div>{project.due}</div>
           <h3>{project.title}</h3>
           <p>{project.notes}</p>
-          <button onClick={this.handleDelete}>Delete</button>
+          <button onClick={this.handleDelete.bind(this, project.id)}>Delete</button>
         </div>
       )
     });
