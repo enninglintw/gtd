@@ -1,4 +1,8 @@
 var AllProjects = React.createClass({
+  handleDelete() {
+    console.log('Delete button is clicked');
+  },
+
   render() {
     var projects = this.props.projects.map((project) => {
       return (
@@ -9,7 +13,7 @@ var AllProjects = React.createClass({
           <div>{project.due}</div>
           <h3>{project.title}</h3>
           <p>{project.notes}</p>
-          <button>Delete</button>
+          <button onClick={this.handleDelete}>Delete</button>
         </div>
       )
     });
