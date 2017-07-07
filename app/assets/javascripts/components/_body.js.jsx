@@ -32,6 +32,7 @@ var Body = React.createClass({
         <AllTodos todos={this.state.todos}
                   handleEdit={this.handleEdit}
                   handleDelete={this.handleDelete} />
+        <AllProjects />
       </div>
     )
   }
