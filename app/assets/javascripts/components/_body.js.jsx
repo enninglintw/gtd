@@ -35,7 +35,8 @@ var Body = React.createClass({
   },
 
   handleDeleteProject(id) {
-    console.log(`Project ${id} was successfully deleted`);
+    var updatedProjects = this.state.projects.filter((p) => { return p.id != id });
+    this.setState({ projects: updatedProjects })
   },
 
   render() {
