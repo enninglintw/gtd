@@ -9,16 +9,11 @@ var AllProjects = React.createClass({
     });
   },
 
-  handleEdit() {
-    console.log('Edit button is clicked');
-  },
-
   render() {
     var projects = this.props.projects.map((project) => {
       return (
         <div key={project.id}>
           <Project project={project}
-                   handleEdit={this.handleEdit}
                    handleDelete={this.handleDelete.bind(this, project.id)} />
         </div>
       )
