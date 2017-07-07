@@ -1,6 +1,11 @@
 var Project = React.createClass ({
+  getInitialState() {
+    return { editable: false }
+  },
+
   handleEdit() {
-    console.log(`Edit button of Project ${this.props.project.id} is clicked`);
+    this.setState({ editable: !this.state.editable });
+    console.log(this.state.editable);
   },
 
   render() {
