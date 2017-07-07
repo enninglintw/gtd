@@ -9,6 +9,10 @@ var AllProjects = React.createClass({
     });
   },
 
+  handleEdit() {
+    console.log('Edit button is clicked');
+  },
+
   render() {
     var projects = this.props.projects.map((project) => {
       return (
@@ -19,6 +23,7 @@ var AllProjects = React.createClass({
           <div>{project.due}</div>
           <h3>{project.title}</h3>
           <p>{project.notes}</p>
+          <button onClick={this.handleEdit}>Edit</button>
           <button onClick={this.handleDelete.bind(this, project.id)}>Delete</button>
         </div>
       )
