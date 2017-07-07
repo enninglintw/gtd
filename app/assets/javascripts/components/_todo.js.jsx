@@ -1,6 +1,6 @@
 var Todo = React.createClass({
   handleEdit() {
-    console.log('Edit button is clicked.');
+    console.log(`Edit button of Todo ${this.props.todo.id} is clicked.`);
   },
 
   render() {
