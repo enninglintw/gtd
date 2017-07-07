@@ -9,6 +9,7 @@ var AllProjects = React.createClass({
           <div>{project.due}</div>
           <h3>{project.title}</h3>
           <p>{project.notes}</p>
+          <button>Delete</button>
         </div>
       )
     });
