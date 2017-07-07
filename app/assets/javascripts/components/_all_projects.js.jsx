@@ -1,6 +1,12 @@
 var AllProjects = React.createClass({
   handleDelete(id) {
-    console.log(`Delete button of Project ${id} is clicked`);
+    $.ajax({
+      url: `/api/v1/projects/${id}`,
+      type: 'DELETE',
+      success:() => {
+        console.log(`Project ${id} was successfully deleted`);
+      }
+    });
   },
 
   render() {
