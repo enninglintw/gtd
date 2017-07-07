@@ -34,6 +34,10 @@ var Body = React.createClass({
     this.setState({ projects: updatedProjects })
   },
 
+  handleDeleteProject(id) {
+    console.log(`Project ${id} was successfully deleted`);
+  },
+
   render() {
     return (
       <div>
@@ -42,7 +46,8 @@ var Body = React.createClass({
                   handleEdit={this.handleEdit}
                   handleDelete={this.handleDelete} />
         <NewProject handleCreate={this.handleCreateProject} />
-        <AllProjects projects={this.state.projects} />
+        <AllProjects projects={this.state.projects}
+                     handleDelete={this.handleDeleteProject} />
       </div>
     )
   }

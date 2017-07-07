@@ -4,7 +4,7 @@ var AllProjects = React.createClass({
       url: `/api/v1/projects/${id}`,
       type: 'DELETE',
       success:() => {
-        console.log(`Project ${id} was successfully deleted`);
+        this.props.handleDelete(id);
       }
     });
   },
