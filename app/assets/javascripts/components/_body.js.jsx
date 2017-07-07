@@ -1,12 +1,16 @@
 var Body = React.createClass({
   getInitialState() {
-    return { todos: [] }
+    return { todos: [], projects: [] }
   },
 
   componentDidMount() {
     $.getJSON(
       '/api/v1/todos.json',
       (response) => { this.setState({ todos: response }) }
+    );
+    $.getJSON(
+      '/api/v1/projects.json',
+      (response) => { this.setState({ projects: response }) }
     );
   },
 
@@ -38,7 +42,7 @@ var Body = React.createClass({
                   handleEdit={this.handleEdit}
                   handleDelete={this.handleDelete} />
         <NewProject handleCreate={this.handleCreateProject} />
-        <AllProjects />
+        <AllProjects projects={this.state.projects} />
       </div>
     )
   }

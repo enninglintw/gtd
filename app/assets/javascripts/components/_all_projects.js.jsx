@@ -1,17 +1,6 @@
 var AllProjects = React.createClass({
-  getInitialState() {
-    return { projects: [] }
-  },
-
-  componentDidMount() {
-    $.getJSON(
-      '/api/v1/projects.json',
-      (response) => { this.setState({ projects: response }) }
-    );
-  },
-
   render() {
-    var projects = this.state.projects.map((project) => {
+    var projects = this.props.projects.map((project) => {
       return (
         <div key={project.id}>
           <div>{project.focus ? '★' : '☆'}</div>
