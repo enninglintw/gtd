@@ -14,6 +14,7 @@ var Main = React.createClass({
     return (
       <div>
         <Header />
+        <Sidebar projects={this.state.projects} />
         <Body projects={this.state.projects} />
       </div>
     )
