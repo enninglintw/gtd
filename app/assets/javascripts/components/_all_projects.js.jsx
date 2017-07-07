@@ -3,6 +3,13 @@ var AllProjects = React.createClass({
     return { projects: [] }
   },
 
+  componentDidMount() {
+    $.getJSON(
+      '/api/v1/projects.json',
+      (response) => { this.setState({ projects: response }) }
+    );
+  },
+
   render() {
     return (
       <div>
