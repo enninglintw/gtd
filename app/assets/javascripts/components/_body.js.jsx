@@ -30,8 +30,8 @@ var Body = React.createClass({
   },
 
   handleCreateProject(project) {
-    console.log('Project was successfully created.');
-    console.log(project);
+    var updatedProjects = this.state.projects.concat(project);
+    this.setState({ projects: updatedProjects })
   },
 
   render() {
