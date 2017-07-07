@@ -1,4 +1,8 @@
 var AllProjects = React.createClass({
+  getInitialState() {
+    return { projects: [] }
+  },
+
   render() {
     return (
       <div>
