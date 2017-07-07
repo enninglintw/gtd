@@ -9,9 +9,8 @@ var NewProject = React.createClass({
       url: '/api/v1/projects',
       type: 'POST',
       data: { project: { title: title, state: state, actions_behaviour: actions_behaviour, notes: notes } },
-      success: (response) => {
-        console.log('Project was successfully created.');
-        console.log(response);
+      success: (project) => {
+        this.props.handleCreate(project);
       }
     });
   },

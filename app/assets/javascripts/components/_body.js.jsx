@@ -25,6 +25,11 @@ var Body = React.createClass({
     this.setState({ todos: updatedTodos })
   },
 
+  handleCreateProject(project) {
+    console.log('Project was successfully created.');
+    console.log(project);
+  },
+
   render() {
     return (
       <div>
@@ -32,7 +37,7 @@ var Body = React.createClass({
         <AllTodos todos={this.state.todos}
                   handleEdit={this.handleEdit}
                   handleDelete={this.handleDelete} />
-        <NewProject />
+        <NewProject handleCreate={this.handleCreateProject} />
         <AllProjects />
       </div>
     )
