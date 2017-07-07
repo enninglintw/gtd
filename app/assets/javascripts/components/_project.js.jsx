@@ -5,19 +5,25 @@ var Project = React.createClass ({
 
   handleEdit() {
     this.setState({ editable: !this.state.editable });
-    console.log(this.state.editable);
   },
 
   render() {
+    var editable   = this.state.editable;
+    var project    = this.props.project;
+    var due        = editable ? <input type='date' /> : <div>{project.due}</div>;
+    var title      = editable ? <input type='text' /> : <h3>{project.title}</h3>;
+    var notes      = editable ? <input type='text' /> : <p>{project.notes}</p>;
+    var editButton = <button onClick={this.handleEdit}>{editable ? 'Save Changes' : 'Edit'}</button>;
+
     return (
       <div>
-        <div>{this.props.project.focus ? '★' : '☆'}</div>
-        <div>{this.props.project.state}</div>
-        <div>{this.props.project.actions_behaviour}</div>
-        <div>{this.props.project.due}</div>
-        <h3>{this.props.project.title}</h3>
-        <p>{this.props.project.notes}</p>
-        <button onClick={this.handleEdit}>Edit</button>
+        <div>{project.focus ? '★' : '☆'}</div>
+        <div>{project.state}</div>
+        <div>{project.actions_behaviour}</div>
+        {due}
+        {title}
+        {notes}
+        {editButton}
         <button onClick={this.props.handleDelete}>Delete</button>
       </div>
     )
