@@ -1,6 +1,6 @@
 var Project = React.createClass ({
   handleEdit() {
-    console.log('Edit button is clicked');
+    console.log(`Edit button of Project ${this.props.project.id} is clicked`);
   },
 
   render() {
