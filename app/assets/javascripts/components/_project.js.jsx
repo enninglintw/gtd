@@ -4,15 +4,24 @@ var Project = React.createClass ({
   },
 
   handleEdit() {
+    if(this.state.editable) {
+      var id      = this.props.project.id;
+      var due     = this.refs.due.value;
+      var title   = this.refs.title.value;
+      var notes   = this.refs.notes.value;
+      var project = { id: id, due: due, title: title, notes: notes };
+      console.log(project);
+    }
+
     this.setState({ editable: !this.state.editable });
   },
 
   render() {
     var editable   = this.state.editable;
     var project    = this.props.project;
-    var due        = editable ? <input type='date' defaultValue={project.due} /> : <div>{project.due}</div>;
-    var title      = editable ? <input type='text' defaultValue={project.title} /> : <h3>{project.title}</h3>;
-    var notes      = editable ? <input type='text' defaultValue={project.notes} /> : <p>{project.notes}</p>;
+    var due        = editable ? <input type='date' ref='due' defaultValue={project.due} />     : <div>{project.due}</div>;
+    var title      = editable ? <input type='text' ref='title' defaultValue={project.title} /> : <h3>{project.title}</h3>;
+    var notes      = editable ? <input type='text' ref='notes' defaultValue={project.notes} /> : <p>{project.notes}</p>;
     var editButton = <button onClick={this.handleEdit}>{editable ? 'Save Changes' : 'Edit'}</button>;
 
     return (
