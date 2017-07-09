@@ -17,6 +17,7 @@ var NewTodo = React.createClass({
   render() {
     return (
       <div>
+        <h2>Create new todo</h2>
         <input ref='title' placeholder='New todo' />
         <input ref='notes' placeholder='Enter notes' />
         <button onClick={this.handleCreate}>Submit</button>

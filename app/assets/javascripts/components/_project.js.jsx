@@ -34,12 +34,12 @@ var Project = React.createClass ({
 
     return (
       <div>
+        {title}
+        {notes}
+        {due}
         <div>{project.focus ? '★' : '☆'}</div>
         <div>{project.state}</div>
         <div>{project.process}</div>
-        {due}
-        {title}
-        {notes}
         {editButton}
         <button onClick={this.props.handleDelete}>Delete</button>
       </div>

@@ -5,10 +5,10 @@ var Todo = React.createClass({
 
   handleEdit() {
     if(this.state.editable) {
-      var id = this.props.todo.id;
+      var id    = this.props.todo.id;
       var title = this.refs.title.value;
       var notes = this.refs.notes.value;
-      var todo = { id: id, title: title, notes: notes };
+      var todo  = { id: id, title: title, notes: notes };
 
       $.ajax({
         url: `/api/v1/todos/${id}`,
@@ -24,11 +24,11 @@ var Todo = React.createClass({
   },
 
   render() {
-    var title = this.state.editable ? <input type='text' ref='title' defaultValue={this.props.todo.title}/> : <h3>{this.props.todo.title}</h3>;
-
-    var notes = this.state.editable ? <input type='text' ref='notes' defaultValue={this.props.todo.notes}/> : <p>{this.props.todo.notes}</p>;
-
-    var editButton = this.state.editable ? <button onClick={this.handleEdit}>Save Changes</button> : <button onClick={this.handleEdit}>Edit</button>;
+    var editable   = this.state.editable;
+    var todo       = this.props.todo;
+    var title      = editable ? <input type='text' ref='title' defaultValue={todo.title} /> : <h3>{todo.title}</h3>;
+    var notes      = editable ? <input type='text' ref='notes' defaultValue={todo.notes} /> : <p>{todo.notes}</p>;
+    var editButton = <button onClick={this.handleEdit}>{editable ? 'Save Changes' : 'Edit'}</button>;
 
     return (
       <div>

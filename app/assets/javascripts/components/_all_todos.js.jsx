@@ -26,6 +26,7 @@ var AllTodos = React.createClass({
 
     return (
       <div>
+        <h2>Todos</h2>
         {todos}
       </div>
     )
