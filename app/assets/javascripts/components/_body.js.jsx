@@ -14,17 +14,17 @@ var Body = React.createClass({
     );
   },
 
-  handleCreate(todo) {
+  handleCreateTodo(todo) {
     var updatedTodos = this.state.todos.concat(todo);
     this.setState({ todos: updatedTodos })
   },
 
-  handleDelete(id) {
+  handleDeleteTodo(id) {
     var updatedTodos = this.state.todos.filter((t) => { return t.id != id });
     this.setState({ todos: updatedTodos })
   },
 
-  handleEdit(todo) {
+  handleEditTodo(todo) {
     var updatedTodos = this.state.todos.map((t) => { return t.id == todo.id ? todo : t })
     this.setState({ todos: updatedTodos })
   },
@@ -47,10 +47,10 @@ var Body = React.createClass({
   render() {
     return (
       <div>
-        <NewTodo handleCreate={this.handleCreate} />
+        <NewTodo handleCreate={this.handleCreateTodo} />
         <AllTodos todos={this.state.todos}
-                  handleEdit={this.handleEdit}
-                  handleDelete={this.handleDelete} />
+                  handleEdit={this.handleEditTodo}
+                  handleDelete={this.handleDeleteTodo} />
         <NewProject handleCreate={this.handleCreateProject} />
         <AllProjects projects={this.state.projects}
                      handleEdit={this.handleEditProject}
