@@ -19,8 +19,8 @@ var NewProject = React.createClass({
     return (
       <div>
         <h2>Create new project</h2>
-        <input ref='title' placeholder='New project'></input>
-        <input ref='notes' placeholder='Enter notes'></input>
+        <input ref='title' placeholder='New project' />
+        <input ref='notes' placeholder='Enter notes' />
         <button onClick={this.handleCreate}>Submit</button>
       </div>
     )
