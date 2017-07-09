@@ -16,8 +16,7 @@ var Project = React.createClass ({
         type: 'PUT',
         data: { project: project },
         success: (project) => {
-          console.log(`Project ${id} was successfully updated`);
-          console.log(project);
+          this.props.handleEdit(project);
         }
       });
     }
