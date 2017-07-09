@@ -40,8 +40,8 @@ var Body = React.createClass({
   },
 
   handleEditProject(project) {
-    console.log(`Project ${project.id} was successfully updated`);
-    console.log(project);
+    var updatedProjects = this.state.projects.map((p) => { return p.id == project.id ? project : p });
+    this.setState({ projects: updatedProjects })
   },
 
   render() {
