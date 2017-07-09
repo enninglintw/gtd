@@ -25,7 +25,7 @@ var Body = React.createClass({
   },
 
   handleEditTodo(todo) {
-    var updatedTodos = this.state.todos.map((t) => { return t.id == todo.id ? todo : t })
+    var updatedTodos = this.state.todos.map((t) => { return t.id == todo.id ? todo : t });
     this.setState({ todos: updatedTodos })
   },
 
