@@ -4,7 +4,7 @@ RSpec.describe Project, type: :model do
   subject { described_class.new(
     title: Faker::Lorem.sentence,
     state: (0..3).to_a.sample,
-    actions_behaviour: (0..1).to_a.sample,
+    process: (0..1).to_a.sample,
   ) }
   it { should be_valid }
 
@@ -23,8 +23,8 @@ RSpec.describe Project, type: :model do
     ]) }
   end
 
-  describe '#actions_behaviour' do
-    it { should validate_presence_of(:actions_behaviour) }
-    it { should define_enum_for(:actions_behaviour).with([:parallel, :sequential]) }
+  describe '#process' do
+    it { should validate_presence_of(:process) }
+    it { should define_enum_for(:process).with([:parallel, :sequential]) }
   end
 end

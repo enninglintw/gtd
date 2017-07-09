@@ -36,7 +36,7 @@ var Project = React.createClass ({
       <div>
         <div>{project.focus ? '★' : '☆'}</div>
         <div>{project.state}</div>
-        <div>{project.actions_behaviour}</div>
+        <div>{project.process}</div>
         {due}
         {title}
         {notes}

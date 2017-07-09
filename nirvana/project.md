@@ -1,4 +1,4 @@
-$ rails g model project title:string notes:text state:integer focus:boolean due:date actions_behaviour:integer
+$ rails g model project title:string notes:text state:integer focus:boolean due:date process:integer
 $ rake db:migrate
 
 - Project
@@ -22,7 +22,7 @@ $ rake db:migrate
     * date
     * use date first, change to datetime later.
 
-  + actions_behaviour
+  + process
     * enum
       - parallel
       - sequential

@@ -20,6 +20,6 @@ class Api::V1::ProjectsController < Api::V1::BaseController
   private
 
   def project_params
-    params.require(:project).permit(:id, :title, :notes, :state, :focus, :due, :actions_behaviour)
+    params.require(:project).permit(:id, :title, :notes, :state, :focus, :due, :process)
   end
 end
