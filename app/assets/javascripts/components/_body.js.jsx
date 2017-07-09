@@ -39,6 +39,11 @@ var Body = React.createClass({
     this.setState({ projects: updatedProjects })
   },
 
+  handleEditProject(project) {
+    console.log(`Project ${project.id} was successfully updated`);
+    console.log(project);
+  },
+
   render() {
     return (
       <div>
@@ -48,6 +53,7 @@ var Body = React.createClass({
                   handleDelete={this.handleDelete} />
         <NewProject handleCreate={this.handleCreateProject} />
         <AllProjects projects={this.state.projects}
+                     handleEdit={this.handleEditProject}
                      handleDelete={this.handleDeleteProject} />
       </div>
     )

@@ -10,8 +10,7 @@ var AllProjects = React.createClass({
   },
 
   handleEdit(project) {
-    console.log(`Project ${project.id} was successfully updated`);
-    console.log(project);
+    this.props.handleEdit(project);
   },
 
   render() {
