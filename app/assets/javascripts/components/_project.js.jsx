@@ -10,7 +10,16 @@ var Project = React.createClass ({
       var title   = this.refs.title.value;
       var notes   = this.refs.notes.value;
       var project = { id: id, due: due, title: title, notes: notes };
-      console.log(project);
+
+      $.ajax({
+        url: `/api/v1/projects/${id}`,
+        type: 'PUT',
+        data: { project: project },
+        success: (project) => {
+          console.log(`Project ${id} was successfully updated`);
+          console.log(project);
+        }
+      });
     }
 
     this.setState({ editable: !this.state.editable });
