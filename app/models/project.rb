@@ -3,8 +3,8 @@ class Project < ActiveRecord::Base
   has_many :project_tags
   has_many :tags, through: :project_tags
 
-  validates_presence_of :title, :state, :actions_behaviour
+  validates_presence_of :title, :state, :process
 
   enum state: [:active, :later, :scheduled, :someday]
-  enum actions_behaviour: [:parallel, :sequential]
+  enum process: [:parallel, :sequential]
 end

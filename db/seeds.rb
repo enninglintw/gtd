@@ -13,7 +13,7 @@
     state: (0..3).to_a.sample,
     focus: Faker::Boolean.boolean,
     due: Faker::Date.forward,
-    actions_behaviour: (0..1).to_a.sample
+    process: (0..1).to_a.sample
   )
 end
 

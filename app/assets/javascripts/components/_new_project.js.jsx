@@ -2,13 +2,13 @@ var NewProject = React.createClass({
   handleCreate() {
     var title = this.refs.title.value;
     var state = 'active';
-    var actions_behaviour = 'parallel';
+    var process = 'parallel';
     var notes = this.refs.notes.value;
 
     $.ajax({
       url: '/api/v1/projects',
       type: 'POST',
-      data: { project: { title: title, state: state, actions_behaviour: actions_behaviour, notes: notes } },
+      data: { project: { title: title, state: state, process: process, notes: notes } },
       success: (project) => {
         this.props.handleCreate(project);
       }
