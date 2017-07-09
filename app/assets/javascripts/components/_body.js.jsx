@@ -1,12 +1,16 @@
 var Body = React.createClass({
   getInitialState() {
-    return { todos: [] }
+    return { todos: [], projects: [] }
   },
 
   componentDidMount() {
     $.getJSON(
       '/api/v1/todos.json',
       (response) => { this.setState({ todos: response }) }
+    );
+    $.getJSON(
+      '/api/v1/projects.json',
+      (response) => { this.setState({ projects: response }) }
     );
   },
 
@@ -25,6 +29,21 @@ var Body = React.createClass({
     this.setState({ todos: updatedTodos })
   },
 
+  handleCreateProject(project) {
+    var updatedProjects = this.state.projects.concat(project);
+    this.setState({ projects: updatedProjects })
+  },
+
+  handleDeleteProject(id) {
+    var updatedProjects = this.state.projects.filter((p) => { return p.id != id });
+    this.setState({ projects: updatedProjects })
+  },
+
+  handleEditProject(project) {
+    var updatedProjects = this.state.projects.map((p) => { return p.id == project.id ? project : p });
+    this.setState({ projects: updatedProjects })
+  },
+
   render() {
     return (
       <div>
@@ -32,6 +51,10 @@ var Body = React.createClass({
         <AllTodos todos={this.state.todos}
                   handleEdit={this.handleEdit}
                   handleDelete={this.handleDelete} />
+        <NewProject handleCreate={this.handleCreateProject} />
+        <AllProjects projects={this.state.projects}
+                     handleEdit={this.handleEditProject}
+                     handleDelete={this.handleDeleteProject} />
       </div>
     )
   }
