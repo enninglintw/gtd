@@ -13,13 +13,8 @@ var AllProjects = React.createClass({
     this.props.handleEdit(project);
   },
 
-  renderProjects() {
-    console.log("Projects is clicked");
-    console.log(this.props.renderInBody);
-  },
-
   render() {
-    var header = this.props.renderIn == 'Sidebar' ? <h2 onClick={this.renderProjects}>Projects</h2> : <h2>Projects</h2>
+    var header = this.props.renderIn == 'Sidebar' ? <h2 onClick={this.props.renderProjects}>Projects</h2> : <h2>Projects</h2>
     var projects = this.props.projects.map((project) => {
       return (
         <div key={project.id}>

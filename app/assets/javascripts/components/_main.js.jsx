@@ -13,12 +13,18 @@ var Main = React.createClass({
     );
   },
 
+  renderProjects() {
+    console.log("Projects is clicked");
+    console.log(this.state.renderInBody);
+  },
+
   render() {
     return (
       <div>
         <Header />
         <Sidebar projects={this.state.projects}
-                 renderInBody={this.state.renderInBody} />
+                 renderInBody={this.state.renderInBody}
+                 renderProjects={this.renderProjects} />
         <Body projects={this.state.projects}
               renderInBody={this.state.renderInBody} />
       </div>
