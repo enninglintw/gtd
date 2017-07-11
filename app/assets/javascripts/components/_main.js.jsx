@@ -17,7 +17,8 @@ var Main = React.createClass({
     return (
       <div>
         <Header />
-        <Sidebar projects={this.state.projects} />
+        <Sidebar projects={this.state.projects}
+                 renderInBody={this.state.renderInBody} />
         <Body projects={this.state.projects}
               renderInBody={this.state.renderInBody} />
       </div>

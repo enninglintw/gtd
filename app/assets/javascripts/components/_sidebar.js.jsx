@@ -7,7 +7,8 @@ var Sidebar = React.createClass({
     return (
       <div>
         <AllProjects projects={this.props.projects}
-                     renderIn={this.state.renderIn} />
+                     renderIn={this.state.renderIn}
+                     renderInBody={this.props.renderInBody} />
       </div>
     )
   }

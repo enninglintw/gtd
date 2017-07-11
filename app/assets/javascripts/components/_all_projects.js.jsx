@@ -15,6 +15,7 @@ var AllProjects = React.createClass({
 
   renderProjects() {
     console.log("Projects is clicked");
+    console.log(this.props.renderInBody);
   },
 
   render() {
