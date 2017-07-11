@@ -14,19 +14,21 @@ var AllProjects = React.createClass({
   },
 
   render() {
+    var header = this.props.renderIn == 'Sidebar' ? <h2 onClick={this.props.renderProjects}>Projects</h2> : <h2>Projects</h2>
     var projects = this.props.projects.map((project) => {
       return (
         <div key={project.id}>
           <Project project={project}
                    handleEdit={this.handleEdit}
-                   handleDelete={this.handleDelete.bind(this, project.id)} />
+                   handleDelete={this.handleDelete.bind(this, project.id)}
+                   renderIn={this.props.renderIn} />
         </div>
       )
     });
 
     return (
       <div>
-        <h2>Projects</h2>
+        {header}
         {projects}
       </div>
     )

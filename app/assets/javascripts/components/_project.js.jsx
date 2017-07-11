@@ -32,17 +32,26 @@ var Project = React.createClass ({
     var notes      = editable ? <input type='text' ref='notes' defaultValue={project.notes} /> : <p>{project.notes}</p>;
     var editButton = <button onClick={this.handleEdit}>{editable ? 'Save Changes' : 'Edit'}</button>;
 
-    return (
-      <div>
-        {title}
-        {notes}
-        {due}
-        <div>{project.focus ? '★' : '☆'}</div>
-        <div>{project.state}</div>
-        <div>{project.process}</div>
-        {editButton}
-        <button onClick={this.props.handleDelete}>Delete</button>
-      </div>
-    )
+    switch(this.props.renderIn) {
+      case 'Sidebar':
+        return (
+          <div>
+            {title}
+          </div>
+        );
+      case 'Body':
+        return (
+          <div>
+            {title}
+            {notes}
+            {due}
+            <div>{project.focus ? '★' : '☆'}</div>
+            <div>{project.state}</div>
+            <div>{project.process}</div>
+            {editButton}
+            <button onClick={this.props.handleDelete}>Delete</button>
+          </div>
+        );
+    }
   }
 });
