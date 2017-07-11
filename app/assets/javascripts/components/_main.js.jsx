@@ -1,6 +1,9 @@
 var Main = React.createClass({
   getInitialState() {
-    return { projects: [] }
+    return {
+      projects: [],
+      renderInBody: 'todos'
+    }
   },
 
   componentDidMount() {
@@ -15,7 +18,8 @@ var Main = React.createClass({
       <div>
         <Header />
         <Sidebar projects={this.state.projects} />
-        <Body projects={this.state.projects} />
+        <Body projects={this.state.projects}
+              renderInBody={this.state.renderInBody} />
       </div>
     )
   }
