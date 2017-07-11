@@ -13,7 +13,12 @@ var AllProjects = React.createClass({
     this.props.handleEdit(project);
   },
 
+  renderProjects() {
+    console.log("Projects is clicked");
+  },
+
   render() {
+    var header = this.props.renderIn == 'Sidebar' ? <h2 onClick={this.renderProjects}>Projects</h2> : <h2>Projects</h2>
     var projects = this.props.projects.map((project) => {
       return (
         <div key={project.id}>
@@ -27,7 +32,7 @@ var AllProjects = React.createClass({
 
     return (
       <div>
-        <h2>Projects</h2>
+        {header}
         {projects}
       </div>
     )
