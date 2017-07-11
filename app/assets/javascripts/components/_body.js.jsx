@@ -44,18 +44,26 @@ var Body = React.createClass({
   },
 
   render() {
-    return (
-      <div>
-        <NewTodo handleCreate={this.handleCreateTodo} />
-        <AllTodos todos={this.state.todos}
-                  handleEdit={this.handleEditTodo}
-                  handleDelete={this.handleDeleteTodo} />
-        <NewProject handleCreate={this.handleCreateProject} />
-        <AllProjects projects={this.props.projects}
-                     handleEdit={this.handleEditProject}
-                     handleDelete={this.handleDeleteProject}
-                     renderIn={this.state.renderIn} />
-      </div>
-    )
+    switch(this.props.renderInBody) {
+      case 'todos':
+        return (
+          <div>
+            <NewTodo handleCreate={this.handleCreateTodo} />
+            <AllTodos todos={this.state.todos}
+                      handleEdit={this.handleEditTodo}
+                      handleDelete={this.handleDeleteTodo} />
+          </div>
+        );
+      case 'projects':
+        return (
+          <div>
+            <NewProject handleCreate={this.handleCreateProject} />
+            <AllProjects projects={this.props.projects}
+                         handleEdit={this.handleEditProject}
+                         handleDelete={this.handleDeleteProject}
+                         renderIn={this.state.renderIn} />
+          </div>
+        );
+    }
   }
 });
