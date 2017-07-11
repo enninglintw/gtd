@@ -19,7 +19,8 @@ var AllProjects = React.createClass({
         <div key={project.id}>
           <Project project={project}
                    handleEdit={this.handleEdit}
-                   handleDelete={this.handleDelete.bind(this, project.id)} />
+                   handleDelete={this.handleDelete.bind(this, project.id)}
+                   renderIn={this.props.renderIn} />
         </div>
       )
     });

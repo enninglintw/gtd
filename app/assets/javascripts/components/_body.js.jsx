@@ -1,6 +1,9 @@
 var Body = React.createClass({
   getInitialState() {
-    return { todos: [] }
+    return {
+      todos: [],
+      renderIn: 'Body'
+    }
   },
 
   componentDidMount() {
@@ -50,7 +53,8 @@ var Body = React.createClass({
         <NewProject handleCreate={this.handleCreateProject} />
         <AllProjects projects={this.props.projects}
                      handleEdit={this.handleEditProject}
-                     handleDelete={this.handleDeleteProject} />
+                     handleDelete={this.handleDeleteProject}
+                     renderIn={this.state.renderIn} />
       </div>
     )
   }
