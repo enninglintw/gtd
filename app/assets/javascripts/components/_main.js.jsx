@@ -14,8 +14,7 @@ var Main = React.createClass({
   },
 
   renderProjects() {
-    console.log("Projects is clicked");
-    console.log(this.state.renderInBody);
+    this.setState({ renderInBody: 'projects' })
   },
 
   render() {
