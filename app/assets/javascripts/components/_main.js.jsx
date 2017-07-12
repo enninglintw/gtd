@@ -33,7 +33,7 @@ var Main = React.createClass({
   },
 
   renderInbox() {
-    console.log('Inbox is clicked');
+    this.setState({ renderInBody: 'todos' })
   },
 
   render() {
