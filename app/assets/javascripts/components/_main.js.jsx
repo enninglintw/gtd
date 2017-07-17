@@ -32,13 +32,18 @@ var Main = React.createClass({
     this.setState({ renderInBody: 'projects' })
   },
 
+  renderInbox() {
+    this.setState({ renderInBody: 'todos' })
+  },
+
   render() {
     return (
       <div>
         <Header />
         <Sidebar projects={this.state.projects}
                  renderInBody={this.state.renderInBody}
-                 renderProjects={this.renderProjects} />
+                 renderProjects={this.renderProjects}
+                 renderInbox={this.renderInbox} />
         <Body projects={this.state.projects}
               handleCreateProject={this.handleCreateProject}
               handleDeleteProject={this.handleDeleteProject}
