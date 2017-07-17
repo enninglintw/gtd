@@ -28,21 +28,6 @@ var Body = React.createClass({
     this.setState({ todos: updatedTodos })
   },
 
-  handleCreateProject(project) {
-    var updatedProjects = this.props.projects.concat(project);
-    this.setState({ projects: updatedProjects })
-  },
-
-  handleDeleteProject(id) {
-    var updatedProjects = this.props.projects.filter((p) => { return p.id != id });
-    this.setState({ projects: updatedProjects })
-  },
-
-  handleEditProject(project) {
-    var updatedProjects = this.props.projects.map((p) => { return p.id == project.id ? project : p });
-    this.setState({ projects: updatedProjects })
-  },
-
   render() {
     switch(this.props.renderInBody) {
       case 'todos':
@@ -57,10 +42,10 @@ var Body = React.createClass({
       case 'projects':
         return (
           <div>
-            <NewProject handleCreate={this.handleCreateProject} />
+            <NewProject handleCreate={this.props.handleCreateProject} />
             <AllProjects projects={this.props.projects}
-                         handleEdit={this.handleEditProject}
-                         handleDelete={this.handleDeleteProject}
+                         handleEdit={this.props.handleEditProject}
+                         handleDelete={this.props.handleDeleteProject}
                          renderIn={this.state.renderIn} />
           </div>
         );

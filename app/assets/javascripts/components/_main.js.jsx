@@ -13,6 +13,21 @@ var Main = React.createClass({
     );
   },
 
+  handleCreateProject(project) {
+    var updatedProjects = this.state.projects.concat(project);
+    this.setState({ projects: updatedProjects })
+  },
+
+  handleDeleteProject(id) {
+    var updatedProjects = this.state.projects.filter((p) => { return p.id != id });
+    this.setState({ projects: updatedProjects })
+  },
+
+  handleEditProject(project) {
+    var updatedProjects = this.state.projects.map((p) => { return p.id == project.id ? project : p });
+    this.setState({ projects: updatedProjects })
+  },
+
   renderProjects() {
     this.setState({ renderInBody: 'projects' })
   },
@@ -25,6 +40,9 @@ var Main = React.createClass({
                  renderInBody={this.state.renderInBody}
                  renderProjects={this.renderProjects} />
         <Body projects={this.state.projects}
+              handleCreateProject={this.handleCreateProject}
+              handleDeleteProject={this.handleDeleteProject}
+              handleEditProject={this.handleEditProject}
               renderInBody={this.state.renderInBody} />
       </div>
     )
